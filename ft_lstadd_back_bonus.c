@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 10:52:25 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/08 10:28:59 by asalguer         ###   ########.fr       */
+/*   Created: 2024/10/05 20:33:05 by asalguer          #+#    #+#             */
+/*   Updated: 2024/10/05 20:49:28 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	i;
+	t_list	*temp;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	while (i >= 0)
+	if (!lst || !new)
+		return ;
+	if (!*lst)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
+		*lst = new;
+		return ;
 	}
-	return (NULL);
+	temp = *lst;
+	while (temp->next != NULL)
+		temp = temp->next;
+	temp->next = new;
 }

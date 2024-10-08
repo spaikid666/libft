@@ -6,13 +6,13 @@
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:51:55 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/04 18:36:21 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/08 10:34:33 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	int	i;
 

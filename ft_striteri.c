@@ -6,7 +6,7 @@
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:24:21 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/04 17:38:01 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/08 10:30:00 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 
 	i = 0;
 	if (!s || !f)
-		return;
+		return ;
 	while (s[i] != '\0')
 	{
 		f(i, &s[i]);

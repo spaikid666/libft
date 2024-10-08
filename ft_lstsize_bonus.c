@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 10:52:25 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/08 10:28:59 by asalguer         ###   ########.fr       */
+/*   Created: 2024/10/05 18:33:50 by asalguer          #+#    #+#             */
+/*   Updated: 2024/10/05 20:22:01 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_lstsize(t_list *lst)
 {
-	int	i;
+	int		i;
+	t_list	*current;
 
 	i = 0;
-	while (s[i] != '\0')
-		i++;
-	while (i >= 0)
+	current = lst;
+	while (current != NULL)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
+		current = current->next;
+		i++;
 	}
-	return (NULL);
+	return (i);
 }

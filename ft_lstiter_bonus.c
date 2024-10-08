@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 10:52:25 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/08 10:28:59 by asalguer         ###   ########.fr       */
+/*   Created: 2024/10/06 17:33:35 by asalguer          #+#    #+#             */
+/*   Updated: 2024/10/06 17:45:29 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	while (i >= 0)
+	if (!lst || !f)
+		return ;
+	while (lst != NULL)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
+		f(lst->content);
+		lst = lst->next;
 	}
-	return (NULL);
 }
