@@ -6,9 +6,11 @@
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 11:43:17 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/08 11:31:00 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/08 12:34:55 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

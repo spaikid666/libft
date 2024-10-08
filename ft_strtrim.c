@@ -6,9 +6,11 @@
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:25:25 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/08 10:29:09 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/08 12:36:08 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strlen(char *str)
 {

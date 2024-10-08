@@ -6,9 +6,11 @@
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:27:21 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/08 11:27:35 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/08 12:37:56 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

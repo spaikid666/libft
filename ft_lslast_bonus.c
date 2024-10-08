@@ -1,14 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lslast.c                                        :+:      :+:    :+:   */
+/*   ft_lslast_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:40:46 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/05 20:26:07 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/08 12:33:57 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {
@@ -39,7 +41,6 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
 		return (NULL);
-
 	while (lst->next != NULL)
 		lst = lst->next;
 	return (lst);

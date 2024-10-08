@@ -6,11 +6,11 @@
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:33:08 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/08 10:34:02 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/08 12:35:19 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_free_matrix(char **matrix, int n)
 {
