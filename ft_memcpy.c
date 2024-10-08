@@ -14,7 +14,7 @@
 
 void	*ft_memcpy(void *dest_str, const void *src_str, size_t n)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*str1;
 	unsigned char	*str2;
 
@@ -23,7 +23,7 @@ void	*ft_memcpy(void *dest_str, const void *src_str, size_t n)
 	str2 = (unsigned char *)dest_str;
 	while (i < n)
 	{
-		str2[i] == str1[i];
+		str2[i] = str1[i];
 		i++;
 	}
 	return (dest_str);
