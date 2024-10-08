@@ -6,7 +6,7 @@
 /*   By: papitio <papitio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:39:55 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/08 21:47:21 by papitio          ###   ########.fr       */
+/*   Updated: 2024/10/08 21:52:45 by papitio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	{
 		dst[j] = src[c];
 		j++;
-		c++
+		c++;
 	}
-
+	dst[j] = '\0';
+	return (i + j);
 }
