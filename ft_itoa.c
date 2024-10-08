@@ -37,8 +37,8 @@ int	ft_strlen(char *str)
 
 char	*ft_swap(char *str)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	char	t;
 
 	i = 0;
@@ -56,8 +56,8 @@ char	*ft_swap(char *str)
 
 char	*ft_itoa(int n)
 {
-	int	i;
-	int	size;
+	int		i;
+	int		size;
 	char	*str;
 
 	i = 0;

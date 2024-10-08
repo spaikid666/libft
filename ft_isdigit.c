@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asalguer <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 11:09:59 by asalguer          #+#    #+#             */
-/*   Updated: 2024/09/19 11:10:22 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/08 11:25:54 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if(c >= '0' && c<= '9')
-        return 1;
-    else
-        return 0;
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }

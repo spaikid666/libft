@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asalguer <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 11:31:57 by asalguer          #+#    #+#             */
-/*   Updated: 2024/09/19 11:38:10 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/08 11:25:36 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    if(c >= 32 && c<= 126)
-        return 1;
-    else
-        return 0;
+	if (c >= 32 && c <= 126)
+		return (1);
+	else
+		return (0);
 }

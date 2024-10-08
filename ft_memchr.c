@@ -1,15 +1,27 @@
-void *ft_memchr(const void *string, int c, size_t n)
-{
-    size_t i;
-    unsigned char *str;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/08 11:29:12 by asalguer          #+#    #+#             */
+/*   Updated: 2024/10/08 11:29:25 by asalguer         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-    i = 0;
-    str = (unsigned char *)string;
-    while(i < n)
-    {
-        if(str[i] == (unsigned char)c)
-            return (void *)(str + i);
-        i++;
-    }
-    return NULL;
+void	*ft_memchr(const void *string, int c, size_t n)
+{
+	size_t			i;
+	unsigned char	*str;
+
+	i = 0;
+	str = (unsigned char *)string;
+	while (i < n)
+	{
+		if (str[i] == (unsigned char)c)
+			return (void *)(str + i);
+		i++;
+	}
+	return (NULL);
 }
