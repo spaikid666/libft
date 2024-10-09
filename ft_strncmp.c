@@ -6,15 +6,15 @@
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 12:50:51 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/08 12:35:55 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/09 13:37:13 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, int n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (i == n)
