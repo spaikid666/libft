@@ -6,61 +6,54 @@
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:25:25 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/09 14:19:52 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/09 18:18:39 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_delante(char const	*s1, char const *set)
+char	*delante(char const	*s1, char const *set)
 {
 	int		i;
-	int		j;
-	char	*str1;
-	char	*str2;
+	char	*str;
 
 	i = 0;
-	str1 = s1;
-	str2 = set;
-	while (str1)
-	{
-		j = 0;
-		while(str2)
-		{
-			if (str1[i] == str2[j])
-				str1[i] = str1[i + 1];
-			else j++;
-		}
+	str = ft_strdup(s1);
+	while (str[i] && ft_strchr(set, str[i]))
 		i++;
-	}
+	return (ft_strdup(str + i));
+}
 
+char	*detras(char *str, char const *set)
+{
+	int		i;
+
+	i = ft_strlen(str);
+	while (i >= 0 && ft_strchr(set, str[i]))
+		i--;
+	str[i + 1] = '\0';
+	return (ft_strdup(str));
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	i;
-	int	j;
-	int	z1;
-	int	z2;
+	int		size;
+	int		size2;
+	char	*str1;
+	char	*str2;
 
-	i = 0;
-	j = 0;
-	z1 = ft_strlen(s1);
-	z2 = ft_strlen(set);
+	size = ft_strlen(s1);
 	if (!set)
-		return (s1 = malloc(sizeof(char) * z1));
-	while (s1[i] != '\0')
+		return (str1 = malloc(sizeof(char) * (size + 1)));
+	if (!s1)
 	{
-		if (s1[i] == set[j])
-		{
-			if (s1[i + z2] == '\0')
-			{
-				s1[i] = '\0';
-				break ;
-			}
-			s1[i] = s1[i + z2];
-		}
-		i++;
+		str1 = malloc(sizeof(char) * (1));
+		str1[0] = '\0';
+		return (str1);
 	}
-	return (s1 = malloc(sizeof(char) * (z1 - z2)));
+	str1 = delante(s1, set);
+	str1 = detras(str1, set);
+	size2 = ft_strlen(str1);
+	str2 = malloc(sizeof(char) * (size2 + 1));
+	return (str2 = ft_strdup(str1));
 }
