@@ -18,24 +18,11 @@
 
 void	*ft_memmove(void *dest_str, const void *src_str, size_t n)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
+	unsigned char		*dest;
+	const unsigned char	*sour;
 
-	d = (unsigned char *)dst;
-	s = (const unsigned char *)src;
-
-	i = 0;
-	j = 0;
 	dest = (unsigned char *)dest_str;
-	temp = ft_strlcpy(temp, src_str, n);
-	j = (ft_strlen(dest_str) + (temp));
-	if ((dest_str == NULL) && (src_str == NULL))
-		return (NULL);
-	dest = *dest_str;
-	while (i < j)
-	{
-		dest + i = temp[i];
-		i++;
-	}
-	return (dest);
+	sour = (const unsigned char *)src_str;
+	n = 0;
+	return (NULL);
 }
