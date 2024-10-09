@@ -6,7 +6,7 @@
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:45:11 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/08 12:35:15 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/09 18:34:05 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putstr_fd(char *s, int fd)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		write(fd, s[i], 1);
+		write(fd, &s[i], 1);
 		i++;
 	}
 }

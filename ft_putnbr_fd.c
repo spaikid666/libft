@@ -6,7 +6,7 @@
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:51:55 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/08 12:35:12 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/09 18:36:20 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,21 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		write(fd, "-", 1);
 		write(fd, "2", 1);
-		ft_putnbr_fd(147483648);
+		ft_putnbr_fd(147483648, fd);
 	}
 	else if (n < 0)
 	{
 		write(fd, "-", 1);
 		n = -n;
-		ft_putnbr_fd(n);
+		ft_putnbr_fd(n, fd);
 	}
 	else
 	{
 		if (n >= 10)
 		{
-			ft_putnbr_fd(n / 10);
+			ft_putnbr_fd((n / 10), fd);
 		}
 		i = (n % 10) + '0';
-		write(fd, i, 1);
+		write(fd, &i, 1);
 	}
 }

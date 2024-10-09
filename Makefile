@@ -6,7 +6,7 @@
 #    By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/08 10:24:06 by asalguer          #+#    #+#              #
-#    Updated: 2024/10/09 13:40:12 by asalguer         ###   ########.fr        #
+#    Updated: 2024/10/09 18:46:07 by asalguer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,31 +25,31 @@ BONUS = ft_lslast_bonus.c ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c\
 ft_lstclear_bonus.c ft_lstdelone_bous.c ft_lstiter_bonus.c\
 ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
 
+HEADERS_DIR = /
+
 OBJS = $(CFILES:.c=.o)
 
-BONUS = $(BONUS:.c=.o)
+OBJS_BONUS = $(BONUS:.c=.o)
 
 CFLAGS = -Wall -Werror -Wextra $(HEADERS_DIR)
-
-bonus: all $(OBJS) $(BONUS_OBJS)
-	@ar rcs $(NAME) $(OBJS) $(BONUS)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rcs $(NAME) $(OBJS)
+	@ar rc $(NAME) $(OBJS)
 	@echo "creando objetos.."
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+bonus: $(OBJS) $(OBJS_BONUS)
+		@ar rc $(NAME) $(OBJS) $(OBJS_BONUS)
+		@echo "creando objetos bonus..."
 
 clean:
-	@rm -f $(OBJS)
+	@rm -f $(OBJS) $(OBJS_BONUS)
 	@echo "limpiando los objetos..."
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "limpiando .exe ..."
+	@echo "limpiando $(NAME)"
 
 re: fclean all
 

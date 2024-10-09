@@ -6,7 +6,7 @@
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:38:51 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/08 12:37:21 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/09 18:33:24 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, "c", 1);
+	write(fd, &c, 1);
 }

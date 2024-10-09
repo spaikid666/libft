@@ -6,7 +6,7 @@
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:33:08 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/08 12:35:19 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/09 18:38:52 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,8 +111,8 @@ char	**ft_fill(char const *s, char c, int nw, char **matrix)
 
 char	**ft_split(char const *s, char c)
 {
-	char **matrix;
-	int nw;
+	char	**matrix;
+	int		nw;
 
 	if (!s)
 		return (NULL);
@@ -120,5 +120,5 @@ char	**ft_split(char const *s, char c)
 	matrix = (char **)malloc((nw + 1) * sizeof(char *));
 	if (!matrix)
 		return (NULL);
-	return (ft_fill_matrix(s, c, nw, matrix));
+	return (ft_fill(s, c, nw, matrix));
 }

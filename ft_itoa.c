@@ -20,18 +20,8 @@ int	ft_size(int n)
 	while (n > 0)
 	{
 		n = n / 10;
-		size++;
-	}
-	return (size);
-}
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
 		i++;
+	}
 	return (i);
 }
 
@@ -60,6 +50,8 @@ char	*ft_itoa(int n)
 	int		size;
 	char	*str;
 
+	if (n > 2147483647 || n < -2147483648)
+		return (NULL);
 	i = 0;
 	size = ft_size(n);
 	str = malloc(sizeof(char) * (size + 1));
