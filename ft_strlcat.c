@@ -6,7 +6,7 @@
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:39:55 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/09 13:13:01 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/09 22:11:24 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	i = ft_strlen(src);
 	j = ft_strlen(dst);
 	c = 0;
-	if (j == dstsize)
-		return (i + j);
+	if (dstsize <= j)
+		return (dstsize + i);
 	while (src[c] != '\0' && j < (dstsize - 1))
 	{
 		dst[j] = src[c];
@@ -30,5 +30,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		c++;
 	}
 	dst[j] = '\0';
-	return (i + j);
+	return (i + j - c);
 }

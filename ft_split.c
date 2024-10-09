@@ -6,7 +6,7 @@
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:33:08 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/09 18:38:52 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/09 20:33:55 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ char	**ft_fill(char const *s, char c, int nw, char **matrix)
 	matrix[j] = NULL;
 	return (matrix);
 }
-
+/*
 char	**ft_split(char const *s, char c)
 {
 	char	**matrix;
@@ -122,3 +122,4 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (ft_fill(s, c, nw, matrix));
 }
+*/
