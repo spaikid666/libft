@@ -6,20 +6,34 @@
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:25:25 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/08 12:36:08 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/09 14:19:52 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+char	*ft_delante(char const	*s1, char const *set)
 {
-	int	i;
+	int		i;
+	int		j;
+	char	*str1;
+	char	*str2;
 
 	i = 0;
-	while (str[i] != '\0')
+	str1 = s1;
+	str2 = set;
+	while (str1)
+	{
+		j = 0;
+		while(str2)
+		{
+			if (str1[i] == str2[j])
+				str1[i] = str1[i + 1];
+			else j++;
+		}
 		i++;
-	return (i);
+	}
+
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
