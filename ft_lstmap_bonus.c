@@ -6,7 +6,7 @@
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 17:48:44 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/08 12:34:30 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/09 19:06:12 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,11 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (!node)
 		{
 			del(content);
-			ft_lstclear(&list, node);
+			ft_lstclear(&list2, (void *)node);
 			return (NULL);
 		}
-		ft_lstadd_back(&list, node);
+		ft_lstadd_back(&list2, (void *)node);
 		lst = lst->next;
 	}
-	return (new_list);
+	return (list2);
 }

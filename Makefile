@@ -6,7 +6,7 @@
 #    By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/08 10:24:06 by asalguer          #+#    #+#              #
-#    Updated: 2024/10/09 18:46:07 by asalguer         ###   ########.fr        #
+#    Updated: 2024/10/09 18:59:15 by asalguer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,6 @@ ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_split.c
 BONUS = ft_lslast_bonus.c ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c\
 ft_lstclear_bonus.c ft_lstdelone_bous.c ft_lstiter_bonus.c\
 ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
-
-HEADERS_DIR = /
 
 OBJS = $(CFILES:.c=.o)
 
