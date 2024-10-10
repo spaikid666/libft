@@ -25,7 +25,6 @@ void	*ft_memmove(void *dest_str, const void *src_str, size_t n)
 		sour += n;
 		while (n--)
 			*(--dest) = *(--sour);
-
 	}
 	else
 	{

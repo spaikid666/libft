@@ -12,12 +12,20 @@
 
 #include "libft.h"
 
-int	ft_size(int n)
+
+int	count_num(int n)
 {
 	int	i;
 
 	i = 0;
-	while (n > 0)
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		n = -n;
+		i++;
+	}
+	while (n != 0)
 	{
 		n = n / 10;
 		i++;
@@ -25,50 +33,30 @@ int	ft_size(int n)
 	return (i);
 }
 
-char	*ft_swap(char *str)
-{
-	int		i;
-	int		j;
-	char	t;
-
-	i = 0;
-	j = ft_strlen(str) - 1;
-	while (i < j)
-	{
-		t = str[i];
-		str[i] = str[j];
-		str[j] = t;
-		i++;
-		j--;
-	}
-	return (str);
-}
-
 char	*ft_itoa(int n)
 {
-	int		i;
-	int		size;
+	int		len;
 	char	*str;
+	int		sign;
 
-	if (n > 2147483647 || n < -2147483648)
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (n == 2147483647)
+		return (ft_strdup("2147483647"));
+	len = count_num(n);
+	str = (char *)malloc(sizeof(char) * len + 1);
+	if (!str)
 		return (NULL);
-	i = 0;
-	size = ft_size(n);
-	str = malloc(sizeof(char) * (size + 1));
+	sign = n;
 	if (n < 0)
+		n = -n;
+	str[len] = '\0';
+	while (len--)
 	{
+		str[len] = n % 10 + '0';
+		n = n / 10;
+	}
+	if (sign < 0)
 		str[0] = '-';
-		n = n * (-1);
-		i++;
-	}
-	while (n > 0)
-	{
-		str[i] = ((n % 10) + '0');
-		i++;
-	}
-	if (n == 0)
-		str[i++] = '0';
-	str[i] = '\0';
-	str = ft_swap(str);
 	return (str);
 }
