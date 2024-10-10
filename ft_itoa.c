@@ -12,8 +12,7 @@
 
 #include "libft.h"
 
-
-int	count_num(int n)
+static int	count_num(int n)
 {
 	int	i;
 

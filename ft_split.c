@@ -6,13 +6,13 @@
 /*   By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:33:08 by asalguer          #+#    #+#             */
-/*   Updated: 2024/10/09 20:33:55 by asalguer         ###   ########.fr       */
+/*   Updated: 2024/10/10 23:28:21 by asalguer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free_matrix(char **matrix, int n)
+static void	ft_free_matrix(char **matrix, int n)
 {
 	int	i;
 
@@ -25,48 +25,7 @@ void	ft_free_matrix(char **matrix, int n)
 	free(matrix);
 }
 
-int	ft_wordcount(char const *s, char c)
-{
-	int	i;
-	int	nw;
-
-	i = 0;
-	nw = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] != c && (s[i - 1] == c || i == 0))
-			nw++;
-		i++;
-	}
-	return (nw);
-}
-
-int	ft_strlenword(char *str, char c, int n)
-{
-	int	i;
-	int	j;
-	int	nw;
-
-	i = 0;
-	j = 0;
-	nw = 0;
-	while (str[i] != '\0')
-	{
-		if (nw == n || (n == 1 && str[0] != c))
-		{
-			while (str[i] != '\0' && str[i] != c)
-				j++;
-			i++;
-			return (j);
-		}
-		else if (str[i] != c && (str[i - 1] == c || i == 0))
-			nw++;
-		i++;
-	}
-	return (0);
-}
-
-char	*ft_allocateword(char const *s, int start, int end)
+static char	*ft_allocateword(char const *s, int start, int end)
 {
 	char	*word;
 	int		i;
@@ -85,7 +44,7 @@ char	*ft_allocateword(char const *s, int start, int end)
 	return (word);
 }
 
-char	**ft_fill(char const *s, char c, int nw, char **matrix)
+static char	**ft_fill(char const *s, char c, int nw, char **matrix)
 {
 	int	i;
 	int	j;
@@ -108,18 +67,25 @@ char	**ft_fill(char const *s, char c, int nw, char **matrix)
 	matrix[j] = NULL;
 	return (matrix);
 }
-/*
+
 char	**ft_split(char const *s, char c)
 {
 	char	**matrix;
 	int		nw;
+	int		i;
 
+	i = 0;
+	nw = 0;
 	if (!s)
 		return (NULL);
-	nw = ft_wordcount(s, c);
+	while (s[i] != '\0')
+	{
+		if (s[i] != c && (s[i - 1] == c || i == 0))
+			nw++;
+		i++;
+	}
 	matrix = (char **)malloc((nw + 1) * sizeof(char *));
 	if (!matrix)
 		return (NULL);
 	return (ft_fill(s, c, nw, matrix));
 }
-*/

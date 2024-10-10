@@ -6,7 +6,7 @@
 #    By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/08 10:24:06 by asalguer          #+#    #+#              #
-#    Updated: 2024/10/09 18:59:15 by asalguer         ###   ########.fr        #
+#    Updated: 2024/10/10 23:50:59 by asalguer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,30 +29,26 @@ OBJS = $(CFILES:.c=.o)
 
 OBJS_BONUS = $(BONUS:.c=.o)
 
-CFLAGS = -Wall -Werror -Wextra $(HEADERS_DIR)
+CFLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rc $(NAME) $(OBJS)
+	ar rc $(NAME) $(OBJS)
 	@echo "creando objetos.."
 
 bonus: $(OBJS) $(OBJS_BONUS)
-		@ar rc $(NAME) $(OBJS) $(OBJS_BONUS)
-		@echo "creando objetos bonus..."
+	ar rc $(NAME) $(OBJS) $(OBJS_BONUS)
+	@echo "creando objetos bonus..."
 
 clean:
-	@rm -f $(OBJS) $(OBJS_BONUS)
+	rm -f $(OBJS) $(OBJS_BONUS)
 	@echo "limpiando los objetos..."
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 	@echo "limpiando $(NAME)"
 
 re: fclean all
-
-exe: all clean
-	@./$(NAME)
-	@rm -f $(NAME)
 
 .PHONY: all clean fclean re exe
