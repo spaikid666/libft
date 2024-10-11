@@ -6,7 +6,7 @@
 #    By: asalguer <asalguer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/08 10:24:06 by asalguer          #+#    #+#              #
-#    Updated: 2024/10/10 23:50:59 by asalguer         ###   ########.fr        #
+#    Updated: 2024/10/11 18:01:38 by asalguer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,4 +51,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re exe
+.PHONY: all clean fclean re bonus
